@@ -1,0 +1,12 @@
+
+14.01.2019 (after also considering nightly versions):
+
+after only running determine_possible_compiler_versions.py:
+Average compiler distance of contract codes: 14.049620708326543 (median: 4)
+Average compiler distance of contracts: 28.39804489580231 (median: 33)
+
+after additionally running find_library_occurrences.py:
+Average compiler distance of contract codes: 12.58 (median: 3.0)
+Average compiler distance of contracts: 28.34 (median: 33.0)
+Average lib distance of contract codes: 5.158 (median: 5.0)
+Average lib distance of contracts: 4.809 (median: 4.0)

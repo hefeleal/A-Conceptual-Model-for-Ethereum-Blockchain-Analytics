@@ -1,0 +1,137 @@
+SafeMath 815d8e1
+
+div:
+            0x0000038b      5b             jumpdest
+            0x0000038c      6000           push1 0x0
+            0x0000038e      80             dup1
+            0x0000038f      82             dup3
+            0x00000390      84             dup5
+            0x00000391      81             dup2
+            0x00000392      15             iszero
+            0x00000393      15             iszero
+            0x00000394      610399         push2 0x399
+        ,=< 0x00000397      57             jumpi
+        |   0x00000398      fe             invalid
+        |   ; CODE XREF from 0x00000397 (fcn.00000000 + 919)
+        `-> 0x00000399      5b             jumpdest
+            0x0000039a      04             div
+            0x0000039b      90             swap1
+            0x0000039c      50             pop
+            0x0000039d      80             dup1
+            0x0000039e      91             swap2
+            0x0000039f      50             pop
+            0x000003a0      50             pop
+            0x000003a1      92             swap3
+            0x000003a2      91             swap2
+            0x000003a3      50             pop
+            0x000003a4      50             pop
+            0x000003a5      56             jump
+
+mul:
+            0x000003a6      5b             jumpdest
+            0x000003a7      6000           push1 0x0
+            0x000003a9      80             dup1
+            0x000003aa      6000           push1 0x0
+            0x000003ac      84             dup5
+            0x000003ad      14             eq
+            0x000003ae      15             iszero
+            0x000003af      6103bb         push2 0x3bb
+        ,=< 0x000003b2      57             jumpi
+        |   0x000003b3      6000           push1 0x0
+        |   0x000003b5      91             swap2
+        |   0x000003b6      50             pop
+        |   0x000003b7      6103da         push2 0x3da
+       ,==< 0x000003ba      56             jump
+       ||   ; CODE XREF from 0x000003b2 (fcn.00000000 + 946)
+       |`-> 0x000003bb      5b             jumpdest
+       |    0x000003bc      82             dup3
+       |    0x000003bd      84             dup5
+       |    0x000003be      02             mul
+       |    0x000003bf      90             swap1
+       |    0x000003c0      50             pop
+       |    0x000003c1      82             dup3
+       |    0x000003c2      84             dup5
+       |    0x000003c3      82             dup3
+       |    0x000003c4      81             dup2
+       |    0x000003c5      15             iszero
+       |    0x000003c6      15             iszero
+       |    0x000003c7      6103cc         push2 0x3cc
+       |,=< 0x000003ca      57             jumpi
+       ||   0x000003cb      fe             invalid
+       ||   ; CODE XREF from 0x000003ca (fcn.00000000 + 970)
+       |`-> 0x000003cc      5b             jumpdest
+       |    0x000003cd      04             div
+       |    0x000003ce      14             eq
+       |    0x000003cf      15             iszero
+       |    0x000003d0      15             iszero
+       |    0x000003d1      6103d6         push2 0x3d6
+       |,=< 0x000003d4      57             jumpi
+       ||   0x000003d5      fe             invalid
+       ||   ; CODE XREF from 0x000003d4 (fcn.00000000 + 980)
+       |`-> 0x000003d6      5b             jumpdest
+       |    0x000003d7      80             dup1
+       |    0x000003d8      91             swap2
+       |    0x000003d9      50             pop
+       |    ; CODE XREF from 0x000003ba (fcn.00000000 + 954)
+       `--> 0x000003da      5b             jumpdest
+            0x000003db      50             pop
+            0x000003dc      92             swap3
+            0x000003dd      91             swap2
+            0x000003de      50             pop
+            0x000003df      50             pop
+            0x000003e0      56             jump
+
+sub:
+            0x000003e1      5b             jumpdest
+            0x000003e2      6000           push1 0x0
+            0x000003e4      82             dup3
+            0x000003e5      82             dup3
+            0x000003e6      11             gt
+            0x000003e7      15             iszero
+            0x000003e8      15             iszero
+            0x000003e9      15             iszero
+            0x000003ea      6103ef         push2 0x3ef
+        ,=< 0x000003ed      57             jumpi
+        |   0x000003ee      fe             invalid
+        |   ; CODE XREF from 0x000003ed (fcn.00000000 + 1005)
+        `-> 0x000003ef      5b             jumpdest
+            0x000003f0      81             dup2
+            0x000003f1      83             dup4
+            0x000003f2      03             sub
+            0x000003f3      90             swap1
+            0x000003f4      50             pop
+            0x000003f5      92             swap3
+            0x000003f6      91             swap2
+            0x000003f7      50             pop
+            0x000003f8      50             pop
+            0x000003f9      56             jump
+
+add:
+            0x000003fa      5b             jumpdest
+            0x000003fb      6000           push1 0x0
+            0x000003fd      80             dup1
+            0x000003fe      82             dup3
+            0x000003ff      84             dup5
+            0x00000400      01             add
+            0x00000401      90             swap1
+            0x00000402      50             pop
+            0x00000403      83             dup4
+            0x00000404      81             dup2
+            0x00000405      10             lt
+            0x00000406      15             iszero
+            0x00000407      15             iszero
+            0x00000408      15             iszero
+            0x00000409      61040e         push2 0x40e
+        ,=< 0x0000040c      57             jumpi
+        |   0x0000040d      fe             invalid
+        |   ; CODE XREF from 0x0000040c (fcn.00000000 + 1036)
+        `-> 0x0000040e      5b             jumpdest
+            0x0000040f      80             dup1
+            0x00000410      91             swap2
+            0x00000411      50             pop
+            0x00000412      50             pop
+            0x00000413      92             swap3
+            0x00000414      91             swap2
+            0x00000415      50             pop
+            0x00000416      50             pop
+            0x00000417      56             jump

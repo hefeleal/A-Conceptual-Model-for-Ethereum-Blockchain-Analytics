@@ -1,0 +1,168 @@
+
+nohup sudo python3 contract_analysis/find_transactions_to_future_contracts.py --mysql-user ethuser --mysql-password wEXaJV266kpCZm09EU8H --geth-uri /media/ssd/.ethereum/geth.ipc &
+
+19.09.2018 - 26.09.2018:
+
+Blocks 0 - 99999:
+Blocks 100000 - 199999:
+Blocks 200000 - 299999:
+5306.8 ETH were transferred to 0x332b656504f4EAbB44C8617A42AF37461a34e9dC on blocknumber 239687, but contract was created at blocknumber 243826
+Blocks 300000 - 399999:
+Blocks 400000 - 499999:
+Blocks 500000 - 599999:
+Blocks 600000 - 699999:
+Blocks 700000 - 799999:
+Blocks 800000 - 899999:
+Blocks 900000 - 999999:
+Blocks 1000000 - 1099999:
+Blocks 1100000 - 1199999:
+Blocks 1200000 - 1299999:
+Blocks 1300000 - 1399999:
+Blocks 1400000 - 1499999:
+Blocks 1500000 - 1599999:
+Blocks 1600000 - 1699999:
+Blocks 1700000 - 1799999:
+Blocks 1800000 - 1899999:
+Blocks 1900000 - 1999999:
+Blocks 2000000 - 2099999:
+Blocks 2100000 - 2199999:
+199.9579 ETH were transferred to 0x20FeAF3Db3576611b24F239E395651e0fC94b977 on blocknumber 2141302, but contract was created at blocknumber 4726586
+100.0 ETH were transferred to 0x61E2E4e348A253f38f23Ee4D5B2aC17183e74c26 on blocknumber 2154969, but contract was created at blocknumber 4726578
+168.0 ETH were transferred to 0xc751125099658dB6c4f79996069b2B89DC914727 on blocknumber 2164811, but contract was created at blocknumber 4726453
+Blocks 2200000 - 2299999:
+Blocks 2300000 - 2399999:
+Blocks 2400000 - 2499999:
+Blocks 2500000 - 2599999:
+Blocks 2600000 - 2699999:
+Blocks 2700000 - 2799999:
+Blocks 2800000 - 2899999:
+Blocks 2900000 - 2999999:
+Blocks 3000000 - 3099999:
+Blocks 3100000 - 3199999:
+Blocks 3200000 - 3299999:
+Blocks 3300000 - 3399999:
+172.633628 ETH were transferred to 0x9611cd35b858f9505515d82b0EeC9A6616fa795E on blocknumber 3307081, but contract was created at blocknumber 4729965
+Blocks 3400000 - 3499999:
+Blocks 3500000 - 3599999:
+Blocks 3600000 - 3699999:
+300.0 ETH were transferred to 0x8eABaF1e1c35cd8E2677edE965D045bf645baF6e on blocknumber 3644181, but contract was created at blocknumber 4731860
+Blocks 3700000 - 3799999:
+Blocks 3800000 - 3899999:
+291.1191 ETH were transferred to 0x73cCBb3A2665fF16cEd11A7B10a91eA31A783534 on blocknumber 3834990, but contract was created at blocknumber 4726798
+Blocks 3900000 - 3999999:
+Blocks 4000000 - 4099999:
+Blocks 4100000 - 4199999:
+Blocks 4200000 - 4299999:
+Blocks 4300000 - 4399999:
+Blocks 4400000 - 4499999:
+Blocks 4500000 - 4599999:
+Blocks 4600000 - 4699999:
+Blocks 4700000 - 4799999:
+Blocks 4800000 - 4899999:
+Blocks 4900000 - 4999999:
+Blocks 5000000 - 5099999:
+Blocks 5100000 - 5199999:
+Blocks 5200000 - 5299999:
+Blocks 5300000 - 5399999:
+Blocks 5400000 - 5499999:
+
+
+
+25.01.2019:
+
+nohup sudo python3 contract_analysis/find_transactions_to_future_contracts.py --mysql-user ethuser --mysql-password wEXaJV266kpCZm09EU8H --geth-uri /home/alex/.ethereum/geth.ipc &
+
+Blocks 0 - 99999:
+Blocks 100000 - 199999:
+Blocks 200000 - 299999:
+5306.8 ETH were transferred to 0x332b656504f4EAbB44C8617A42AF37461a34e9dC on blocknumber 239687, but contract was created at blocknumber 243826
+Blocks 300000 - 399999:
+Blocks 400000 - 499999:
+Blocks 500000 - 599999:
+Blocks 600000 - 699999:
+Blocks 700000 - 799999:
+Blocks 800000 - 899999:
+Blocks 900000 - 999999:
+Blocks 1000000 - 1099999:
+Blocks 1100000 - 1199999:
+Blocks 1200000 - 1299999:
+Blocks 1300000 - 1399999:
+Blocks 1400000 - 1499999:
+Blocks 1500000 - 1599999:
+Blocks 1600000 - 1699999:
+Blocks 1700000 - 1799999:
+Blocks 1800000 - 1899999:
+Blocks 1900000 - 1999999:
+Blocks 2000000 - 2099999:
+Blocks 2100000 - 2199999:
+34.24525155920757 ETH were transferred to 0x84ed52DfAB73C4Fc06A46cAF314A6Ba054961530 on blocknumber 2128696, but contract was created at blocknumber 4726295
+199.9579 ETH were transferred to 0x20FeAF3Db3576611b24F239E395651e0fC94b977 on blocknumber 2141302, but contract was created at blocknumber 4726586
+100.0 ETH were transferred to 0x61E2E4e348A253f38f23Ee4D5B2aC17183e74c26 on blocknumber 2154969, but contract was created at blocknumber 4726578
+168.0 ETH were transferred to 0xc751125099658dB6c4f79996069b2B89DC914727 on blocknumber 2164811, but contract was created at blocknumber 4726453
+Blocks 2200000 - 2299999:
+Blocks 2300000 - 2399999:
+54.23 ETH were transferred to 0x47516F6E46e51C89DDe908eeB321a12FcB8B3fca on blocknumber 2328394, but contract was created at blocknumber 4726907
+Blocks 2400000 - 2499999:
+Blocks 2500000 - 2599999:
+Blocks 2600000 - 2699999:
+Blocks 2700000 - 2799999:
+Blocks 2800000 - 2899999:
+Blocks 2900000 - 2999999:
+Blocks 3000000 - 3099999:
+Blocks 3100000 - 3199999:
+55.0594742 ETH were transferred to 0x2AcC5cFE8F909494Ad641e05a5c6D91Ca11E6B61 on blocknumber 3180341, but contract was created at blocknumber 4726868
+Blocks 3200000 - 3299999:
+Blocks 3300000 - 3399999:
+172.633628 ETH were transferred to 0x9611cd35b858f9505515d82b0EeC9A6616fa795E on blocknumber 3307081, but contract was created at blocknumber 4729965
+Blocks 3400000 - 3499999:
+57.61756895 ETH were transferred to 0x071f0Ceec1562d62A91080152825F47457080231 on blocknumber 3407988, but contract was created at blocknumber 4730046
+15.95928285 ETH were transferred to 0x071f0Ceec1562d62A91080152825F47457080231 on blocknumber 3408013, but contract was created at blocknumber 4730046
+Blocks 3500000 - 3599999:
+Blocks 3600000 - 3699999:
+13.796528 ETH were transferred to 0xf02687bd488ec3F95F6DC04B6D2Ea88876C03C5a on blocknumber 3632409, but contract was created at blocknumber 4731664
+300.0 ETH were transferred to 0x8eABaF1e1c35cd8E2677edE965D045bf645baF6e on blocknumber 3644181, but contract was created at blocknumber 4731860
+Blocks 3700000 - 3799999:
+Blocks 3800000 - 3899999:
+291.1191 ETH were transferred to 0x73cCBb3A2665fF16cEd11A7B10a91eA31A783534 on blocknumber 3834990, but contract was created at blocknumber 4726798
+30.0 ETH were transferred to 0xb6C307E4B89907a93Eb7B83691d0eAa6fAca92Ed on blocknumber 3870348, but contract was created at blocknumber 4741721
+23.28661995 ETH were transferred to 0xDA26cB2e48Dffa117960Abe68D504f8b7cF7Bd90 on blocknumber 3870348, but contract was created at blocknumber 4753234
+Blocks 3900000 - 3999999:
+31.0 ETH were transferred to 0xE857Bb0cD011c2aD27D3D1e0EE5b80f051266701 on blocknumber 3987119, but contract was created at blocknumber 4733689
+Blocks 4000000 - 4099999:
+Blocks 4100000 - 4199999:
+Blocks 4200000 - 4299999:
+18.75 ETH were transferred to 0xb191899fcB4d993E005aa41C3FaED186caE4975D on blocknumber 4203618, but contract was created at blocknumber 4213791
+18.7 ETH were transferred to 0x4d60B9FB97C032cAE60944DfA2ae4c9e7fD11799 on blocknumber 4276428, but contract was created at blocknumber 4752925
+Blocks 4300000 - 4399999:
+Blocks 4400000 - 4499999:
+Blocks 4500000 - 4599999:
+Blocks 4600000 - 4699999:
+Blocks 4700000 - 4799999:
+Blocks 4800000 - 4899999:
+Blocks 4900000 - 4999999:
+Blocks 5000000 - 5099999:
+Blocks 5100000 - 5199999:
+Blocks 5200000 - 5299999:
+70.30732198646187 ETH were transferred to 0xb07Ec92F81244F2a84df3A915D4E5c75CDd34346 on blocknumber 5239082, but contract was created at blocknumber 5240098
+Blocks 5300000 - 5399999:
+Blocks 5400000 - 5499999:
+Blocks 5500000 - 5599999:
+Blocks 5600000 - 5699999:
+Blocks 5700000 - 5799999:
+Blocks 5800000 - 5899999:
+Blocks 5900000 - 5999999:
+Blocks 6000000 - 6099999:
+Blocks 6100000 - 6199999:
+Blocks 6200000 - 6299999:
+20.0 ETH were transferred to 0xA60DC0b1DaC08610543E8E68A9961847e0a13470 on blocknumber 6211121, but contract was created at blocknumber 6215703
+73.0 ETH were transferred to 0xA60DC0b1DaC08610543E8E68A9961847e0a13470 on blocknumber 6211359, but contract was created at blocknumber 6215703
+Blocks 6300000 - 6399999:
+50.0 ETH were transferred to 0xf60426645f02B9Fa996b4c836052292a4E9f0A0E on blocknumber 6365987, but contract was created at blocknumber 6402628
+Blocks 6400000 - 6499999:
+Blocks 6500000 - 6599999:
+Blocks 6600000 - 6699999:
+Blocks 6700000 - 6799999:
+Blocks 6800000 - 6899999:
+Total number of transactions between blocks 0 and 3400000 with >= 10000000000000000000 wei transferred: 1704032
+Total number of transactions between blocks 3400000 and 6900000 with >= 10000000000000000000 wei transferred: 25117327
+Total number of transactions with >= 10000000000000000000 wei transferred: 26821359

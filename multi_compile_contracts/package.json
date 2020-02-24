@@ -1,0 +1,14 @@
+{
+  "name": "multi_compile_contracts",
+  "version": "1.0.0",
+  "description": "Compile a contract with all (stable) compiler versions that are compatible with that contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Hefele",
+  "license": "MIT",
+  "dependencies": {
+    "solc": "^0.5.2"
+  }
+}

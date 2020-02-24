@@ -1,0 +1,47 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace Ledger {
+
+  class Block {
+  }
+
+  ' see section 4.3 in the yellow paper
+  class BlockHeader {
+    String parentHash
+    String ommersHash
+    address beneficiary
+    String stateRoot
+    String transactionsRoot
+    String receiptsRoot
+    bytes[] logsBloom
+    int difficulty
+    int blockNumber
+    int gasLimit
+    int gasUsed
+    String timestamp
+    byte[] extraData
+    String mixHash
+    int nonce
+  }
+
+  ' see section 4.2 in the yellow paper
+  class Transaction {
+    int nonce
+    int gasPrice
+    int gasLimit
+    address to
+    int value
+    byte[] v
+    byte[] r
+    byte[] s
+    byte[] init
+    byte[] data
+  }
+
+  Block *-- "1" BlockHeader
+  Block *-- "*" Transaction
+  Block *-- "1" OmmersList
+}
+@enduml

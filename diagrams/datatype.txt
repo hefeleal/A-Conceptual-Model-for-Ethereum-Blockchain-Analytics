@@ -1,0 +1,86 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace DataType {
+
+  class DataType <<abstract>> {
+  }
+
+  class Integer {
+  }
+
+  class Boolean {
+  }
+
+  class Array {
+    Integer length
+  }
+
+  class Struct {
+  }
+
+  class Enum {
+  }
+
+  class Mapping {
+  }
+
+  class Operator <<abstract>> {
+  }
+
+  enum Comparison {
+    <
+    >
+    <=
+    >=
+    "=="
+    !=
+  }
+
+  enum BitwiseOperation {
+    &
+    |
+    ^
+    ~
+  }
+
+  enum ArithmeticOperation {
+    +
+    -
+    *
+    **
+    /
+    %
+    <<
+    >>
+  }
+
+  enum BooleanOperator {
+    !
+    &&
+    ||
+    "=="
+    !=
+  }
+
+  DataType <|-- Integer
+  DataType <|-- Boolean
+  DataType <|-- Array
+  Array <|-- FixedSizeArray
+  Array <|-- DynamicArray
+  DataType <|-- Struct
+  DataType "*" --o Struct
+  DataType <|-- Enum
+  DataType <|-- Mapping
+  Mapping *-- KeyType
+  Mapping *-- ValueType
+
+  Operator <|-- Comparison
+  Operator <|-- BitwiseOperation
+  Operator <|-- ArithmeticOperation
+  Operator <|-- BooleanOperator
+
+  DataType - Operator
+}
+@enduml

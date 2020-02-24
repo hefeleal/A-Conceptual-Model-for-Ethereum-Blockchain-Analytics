@@ -1,0 +1,45 @@
+contract-hashes of contracts that exist both created by users and by other contracts 12.09.2018:
+
+mysql> select s1.contractHash, c1, c2 from ((select contractHash, count(*) as c1 from eth.contract group by contractHash) as s1 join (select contractHash, count(*) as c2 from eth.contractCreatedContract group by contractHash) as s2 on s1.contractHash = s2.contractHash);
++--------------------------------------------------------------------+-----+---------+
+| contractHash                                                       | c1  | c2      |
++--------------------------------------------------------------------+-----+---------+
+| 0x186fcf2ec9617137c15f1052537195ed628d46f9c56f41c03033da0e881e2d5a |   1 |    2672 |
+| 0x1907f0acaf2d32548df0b323b0cb9077bff426f501cdd6fe7ba56c3602f3e43c |   1 |     413 |
+| 0x1e4366082444073b4bea23568c108c4288f2293bf126f5cd6359c41ec52fc7fe |   2 |  305040 |
+| 0x2df39c0062882ba634fb24c89e7f9871ecef10a6e6a6e79a336f6ed463d5c942 |   9 |       2 |
+| 0x2f392ea1bb95460c866659701c2089d106e3876771a938437fadb93ad10f9db2 | 110 |       1 | code: 606060405200
+| 0x337c29fd9976d67b66b28034c1414c04861ce13b19a267c6e01d66f2cdb6bfba |   1 |  539982 |
+| 0x987cc8ce0e0f18ecd7d2dc62783b7df41dae1b52a3f6edb91f6363b894d64eec |   1 |     199 |
+| 0xa730bf4ae8b8d79a8c09ab8d29b845fdd4c90f497f2b15089a8c5320d8cd7d9c |   4 |  539982 |
+| 0xa7e48f0d73eaf7c47528d6ab59ffae7b4aec13c5eb888b7359f014521767c848 |   9 |  220035 |
+| 0xac9a2990224075054340e9cb20b4b2a377301e9a902beea42398f0cde38e0ff3 |   1 |    1139 |
+| 0xb3f06454bdfc98476a5c6f4239fc17c12a2334f79fc07beeaf70fc1e9b7d46e1 |   1 |     369 |
+| 0xb8c854f6e155c46e44007f473dc00d99e2006bed6122d6ed862a036bb93a2480 |   1 |      47 |
+| 0xc76eeb2dd86a6667299a1a795fb66a365714690a84ef64d65d5aae0b0d3fd5e7 |   1 |    6684 |
+| 0xce33220d5c7f0d09d75ceff76c05863c5e7d6e801c70dfe7d5d45d4c44e80654 |  15 | 1501262 |
+| 0xf0b332bc44312957c41e1c20a16725fe869fe75441fd6ffd6bd0e13f2703d1ea |   1 |  142580 |
++--------------------------------------------------------------------+-----+---------+
+
+bzw:
+
+mysql> select distinct contract.contractHash from eth.contract, eth.contractCreatedContract where contract.contractHash = contractCreatedContract.contractHash;
++--------------------------------------------------------------------+
+| contractHash                                                       |
++--------------------------------------------------------------------+
+| 0x186fcf2ec9617137c15f1052537195ed628d46f9c56f41c03033da0e881e2d5a |
+| 0x1907f0acaf2d32548df0b323b0cb9077bff426f501cdd6fe7ba56c3602f3e43c |
+| 0x1e4366082444073b4bea23568c108c4288f2293bf126f5cd6359c41ec52fc7fe |
+| 0x2df39c0062882ba634fb24c89e7f9871ecef10a6e6a6e79a336f6ed463d5c942 |
+| 0x2f392ea1bb95460c866659701c2089d106e3876771a938437fadb93ad10f9db2 |
+| 0x337c29fd9976d67b66b28034c1414c04861ce13b19a267c6e01d66f2cdb6bfba |
+| 0x987cc8ce0e0f18ecd7d2dc62783b7df41dae1b52a3f6edb91f6363b894d64eec |
+| 0xa730bf4ae8b8d79a8c09ab8d29b845fdd4c90f497f2b15089a8c5320d8cd7d9c |
+| 0xa7e48f0d73eaf7c47528d6ab59ffae7b4aec13c5eb888b7359f014521767c848 |
+| 0xac9a2990224075054340e9cb20b4b2a377301e9a902beea42398f0cde38e0ff3 |
+| 0xb3f06454bdfc98476a5c6f4239fc17c12a2334f79fc07beeaf70fc1e9b7d46e1 |
+| 0xb8c854f6e155c46e44007f473dc00d99e2006bed6122d6ed862a036bb93a2480 |
+| 0xc76eeb2dd86a6667299a1a795fb66a365714690a84ef64d65d5aae0b0d3fd5e7 |
+| 0xce33220d5c7f0d09d75ceff76c05863c5e7d6e801c70dfe7d5d45d4c44e80654 |
+| 0xf0b332bc44312957c41e1c20a16725fe869fe75441fd6ffd6bd0e13f2703d1ea |
++--------------------------------------------------------------------+

@@ -1,0 +1,33 @@
+
+after only running determine_possible_compiler_versions.py:
+
+48504 of 50172 contract codes correctly estimate the compiler version (96.6754%)
+2055430 of 2096100 contracts correctly estimate the compiler version (98.0597%)
+
+after additionally running find_library_occurrences.py:
+
+46559 of 48273 contract codes correctly estimate the compiler version (96.4494%)
+2052659 of 2093387 contracts correctly estimate the compiler version (98.0544%)
+19732 true positives (39.3185%)
+21168 true negatives (42.1799%)
+599 false positives (1.1936%)
+8686 false negatives (17.3080%)
+50185 total verified contract codes
+
+
+update 14.01.2019 (after also considering nightly versions):
+
+after only running determine_possible_compiler_versions.py:
+49883 of 50172 contract codes correctly estimate the compiler version (99.4240%)
+2058801 of 2096100 contracts correctly estimate the compiler version (98.2206%)
+
+after additionally running find_library_occurrences.py (compiler versions of 13 contract codes were only identified after this step):
+90005 smart contracts use the library SafeMath.
+
+47886 of 48221 contract codes correctly estimate the compiler version (99.3053%)
+2055969 of 2093328 contracts correctly estimate the compiler version (98.2153%)
+19683 true positives (39.2209%)
+21171 true negatives (42.1859%)
+596 false positives (1.1876%)
+8735 false negatives (17.4056%)
+50185 total verified contract codes

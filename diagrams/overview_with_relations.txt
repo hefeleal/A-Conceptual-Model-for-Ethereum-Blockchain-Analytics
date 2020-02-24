@@ -1,0 +1,238 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace Source {
+  class Contract {
+    String name
+    boolean is_abstract
+  }
+
+  class Library {
+    String name
+  }
+
+  class Variable {
+    String name
+  }
+
+  class Type <<abstract>> {
+
+  }
+
+  enum DataType {
+    INT
+    UINT
+    BOOL
+    ARRAY
+    STRUCT
+    ENUM
+    MAPPING
+  }
+
+  enum ObjectType {
+    BLOCK
+    MSG
+    TX
+    ADDRESS
+  }
+
+  class Function {
+    String name
+    boolean is_abstract
+  }
+
+  class Event {
+    String name
+  }
+
+  class Statement {
+  }
+
+  class FunctionArgument {
+    String name
+  }
+
+  class ReturnValue {
+    String name
+  }
+
+  class FunctionModifier {
+    String name
+  }
+
+  enum AccessModifier {
+    PUBLIC
+    PRIVATE
+    INTERNAL
+    EXTERNAL
+  }
+
+  Program *-- "*" Contract
+  Program *-- "*" Library
+  Contract "1" -- "*" Library : uses
+  Contract "*" -- "1" Contract : inherits_from
+  Contract *-- "*" Variable
+  Variable *-- "1" Type
+  FunctionArgument *-- "1" Type
+  ReturnValue *-- "1" Type
+  Contract *-- "*" Event
+  Contract *-- "*" FunctionModifier
+  Contract *-- "*" Function
+  Function <|-- Constructor
+  Function <|-- FallbackFunction
+  Function *-- "*" FunctionArgument
+  Function *-- "*" Statement
+  Function *- "*" FunctionModifier
+  FunctionModifier *-- "*" FunctionArgument
+  Function *-- "0,1" ReturnValue
+  Variable *- "1" AccessModifier
+  AccessModifier "1" -* Function
+  Type <|-- DataType
+  Type <|-- ObjectType
+}
+
+namespace EVM {
+
+  class MachineCode {
+  }
+
+  enum Opcode {
+    STOP
+    ADD
+    MUL
+    SUB
+    ...
+  }
+
+  ' see section 9.3 in the yellow paper
+  class ExecutionEnvironment {
+    address codeOwner
+    address sender
+    int gasPrice
+    byte[] inputData
+    address causer
+    int value
+    int messageCallDepth
+  }
+
+  ' see section 4.1 in the yellow paper
+  class WorldState {
+    ' this is a mapping from addresses to account states
+    address[] addr
+  }
+
+  class AccountState {
+    int nonce
+    int balance
+    String storageRoot
+    String codeHash
+  }
+
+  ' see section 9.4.1 in the yellow paper
+  class MachineState {
+    int availableGas
+    int programCounter
+    byte[] memoryContents
+    int numberOfActiveWordsInMemory
+    byte[] stackContents
+  }
+
+  ' see section 6.1 in the yellow paper
+  class SubState {
+    address[] selfdestructSet
+    bytes[] logSeries
+    address[] touchedAccounts
+    bytes[] refundBalance
+  }
+
+  ' see section 9.5 in the yellow paper
+  class IteratorFunction {
+  }
+
+  Source.Program .> MachineCode
+  IteratorFunction *-- "1" WorldState
+  IteratorFunction *-- "1" MachineState
+  IteratorFunction *-- "1" SubState
+  IteratorFunction *-- "1" ExecutionEnvironment
+  WorldState *-- "*" AccountState
+  ExecutionEnvironment *-- "1" MachineCode
+  MachineCode *-- "*" Opcode
+  ExecutionEnvironment *-- "1" Ledger.BlockHeader : presentHeader
+}
+
+namespace Storage {
+
+  ' see section 4.3.1 in the yellow paper
+  class TransactionReceipt {
+    int cumulativeGasUsed
+    byte[] logsBloomFilter
+    int statusCode
+  }
+
+  ' see section 4.3.1 in the yellow paper
+  class Log {
+    address logger
+    bytes32[] topics
+    bytes[] data
+  }
+
+  class Trie <<abstract>> {
+  }
+
+  ' see https://ethereum.stackexchange.com/questions/15142/how-many-tries-does-ethereum-have
+  Trie <|-- TransactionTrie
+  Trie <|-- TransactionReceiptTrie
+  Trie <|-- StateTrie
+  Trie <|-- StorageTrie
+
+  TransactionReceipt *-- "*" Log : createdLogs
+  TransactionReceiptTrie *-- "*" TransactionReceipt
+  TransactionTrie *-- "*" Ledger.Transaction
+  StateTrie *-- "*" EVM.AccountState
+  StorageTrie *-- "*" AccountStorage
+  StorageTrie ..> EVM.AccountState
+}
+
+namespace Ledger {
+  class Block {
+  }
+
+  ' see section 4.3 in the yellow paper
+  class BlockHeader {
+    String parentHash
+    String ommersHash
+    address beneficiary
+    String stateRoot
+    String transactionsRoot
+    String receiptsRoot
+    bytes[] logsBloom
+    int difficulty
+    int blockNumber
+    int gasLimit
+    int gasUsed
+    String timestamp
+    byte[] extraData
+    String mixHash
+    int nonce
+  }
+
+  ' see section 4.2 in the yellow paper
+  class Transaction {
+    int nonce
+    int gasPrice
+    int gasLimit
+    address to
+    int value
+    byte[] v
+    byte[] r
+    byte[] s
+    byte[] init
+    byte[] data
+  }
+
+  Block *-- "1" BlockHeader
+  Block *-- "*" Transaction
+  Block *-- "1" OmmersList
+}
+@enduml

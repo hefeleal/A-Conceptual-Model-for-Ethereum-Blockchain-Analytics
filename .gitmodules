@@ -1,0 +1,3 @@
+[submodule "multi_compile_contracts/solc-bin"]
+	path = multi_compile_contracts/solc-bin
+	url = https://github.com/ethereum/solc-bin.git

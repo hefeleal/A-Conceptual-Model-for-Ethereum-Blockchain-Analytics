@@ -1,0 +1,58 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace Statement {
+
+  class Statement {
+  }
+
+  class Expression {
+  }
+
+  class Operator <<abstract>> {
+  }
+
+  enum Comparison {
+    <
+    >
+    <=
+    >=
+    "=="
+    !=
+  }
+
+  enum BitwiseOperation {
+    &
+    |
+    ^
+    ~
+  }
+
+  enum ArithmeticOperation {
+    +
+    -
+    *
+    **
+    /
+    %
+    <<
+    >>
+  }
+
+  enum BooleanOperator {
+    !
+    &&
+    ||
+    "=="
+    !=
+  }
+
+  Statement *-- "*" Expression
+  Expression *-- "*" Operator
+  Operator <|-- Comparison
+  Operator <|-- BitwiseOperation
+  Operator <|-- ArithmeticOperation
+  Operator <|-- BooleanOperator
+}
+@enduml

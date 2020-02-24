@@ -1,0 +1,72 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace EVM {
+
+  class MachineCode {
+  }
+
+  enum Opcode {
+    STOP
+    ADD
+    MUL
+    SUB
+    ...
+  }
+
+  ' see section 9.3 in the yellow paper
+  class ExecutionEnvironment {
+    address codeOwner
+    address sender
+    int gasPrice
+    byte[] inputData
+    address causer
+    int value
+    int messageCallDepth
+    BlockHeader presentHeader
+  }
+
+  ' see section 4.1 in the yellow paper
+  class WorldState {
+    ' this is a mapping from addresses to account states
+    address[] addr
+  }
+
+  class AccountState {
+    int nonce
+    int balance
+    String storageRoot
+    String codeHash
+  }
+
+  ' see section 9.4.1 in the yellow paper
+  class MachineState {
+    int availableGas
+    int programCounter
+    byte[] memoryContents
+    int numberOfActiveWordsInMemory
+    byte[] stackContents
+  }
+
+  ' see section 6.1 in the yellow paper
+  class SubState {
+    address[] selfdestructSet
+    bytes[] logSeries
+    address[] touchedAccounts
+    bytes[] refundBalance
+  }
+
+  ' see section 9.5 in the yellow paper
+  class IteratorFunction {
+  }
+
+  IteratorFunction *-- "1" WorldState
+  IteratorFunction *-- "1" MachineState
+  IteratorFunction *-- "1" SubState
+  IteratorFunction *-- "1" ExecutionEnvironment
+  WorldState *-- "*" AccountState
+  ExecutionEnvironment *-- "1" MachineCode
+  MachineCode *-- "*" Opcode
+}
+@enduml

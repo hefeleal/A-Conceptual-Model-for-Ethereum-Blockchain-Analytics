@@ -1,0 +1,8 @@
+Parent: 0x14fea711dca8fcea6be47e14ea1406384f18c7cc, Max Nonce: -1, New Nonce: 0, New Address: 0x02820E4bEE488C40f7455fDCa53125565148708F, Balance: 2000000000000000
+Parent: 0x41238ec6b8d6543f018abc672704747e4b8638df, Max Nonce: -1, New Nonce: 2, New Address: 0xFaF844B92994fc7194AB0e0B27C6AAf494f66C36, Balance: 558999999999999
+Parent: 0x9ca228250f9d8f86c23690074c2b96d5f5479f79, Max Nonce: -1, New Nonce: 0, New Address: 0x8398fF6c618e9515468c1c4b198d53666CBe8462, Balance: 30000000000000000
+Parent: 0xbc9d94808bca1396535e6a6112d3e299dbfcb4ca, Max Nonce: -1, New Nonce: 0, New Address: 0x30606157F39bDA9Ed4E1Be6625B4F8b7B54A54a1, Balance: 10000000000000000
+Parent: 0xbf0c5d82748ed81b5794e59055725579911e3e4e, Max Nonce: -1, New Nonce: 52974, New Address: 0x9C921987501b13899F773836DebbA360E317C7e5, Balance: 2808530000000000000
+Command terminated by signal 15
+195559.50user 4928.92system 302:24:11elapsed 18%CPU (0avgtext+0avgdata 2244624maxresident)k
+2704inputs+40outputs (17major+136951097minor)pagefaults 0swaps

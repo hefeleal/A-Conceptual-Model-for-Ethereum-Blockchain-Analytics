@@ -1,0 +1,34 @@
+@startuml
+skinparam classAttributeIconSize 0
+' hide circle
+
+namespace Storage {
+
+  ' see section 4.3.1 in the yellow paper
+  class TransactionReceipt {
+    int cumulativeGasUsed
+    byte[] logsBloomFilter
+    int statusCode
+  }
+
+  ' see section 4.3.1 in the yellow paper
+  class Log {
+    address logger
+    bytes32[] topics
+    bytes[] data
+  }
+
+  class Trie <<abstract>> {
+  }
+
+  ' see https://ethereum.stackexchange.com/questions/15142/how-many-tries-does-ethereum-have
+  Trie <|-- TransactionTrie
+  Trie <|-- TransactionReceiptTrie
+  Trie <|-- StateTrie
+  Trie <|-- StorageTrie
+
+  TransactionReceipt *-- "*" Log : createdLogs
+  TransactionReceiptTrie *-- "*" TransactionReceipt
+  StorageTrie *-- "*" AccountStorage
+}
+@enduml
