@@ -3564,8 +3564,8 @@ keccakjs@^0.2.0, keccakjs@^0.2.1:
     sha3 "^1.1.0"
 
 keypair@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/keypair/-/keypair-1.0.1.tgz#7603719270afb6564ed38a22087a06fc9aa4ea1b"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/keypair/-/keypair-1.0.4.tgz#a749a45f388593f3950f18b3757d32a93bd8ce83"
 
 kind-of@^3.0.2:
   version "3.2.2"
